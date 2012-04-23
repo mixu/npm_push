@@ -1,8 +1,12 @@
 var http = require('http'),
-    api = require('./lib/server');
+    app = require('./lib/app.js'),
+    api;
 
 
-var server = http.createServer();
+app.configure(require('./config.js'));
+
+var api = app.Api,
+    server = http.createServer();
 
 server.on('request', function(req, res) {
   if(!api.route(req, res)) {
