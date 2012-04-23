@@ -1,0 +1,13 @@
+{
+  "name": "npm_push",
+  "description": "Local npm server",
+  "version": "0.0.1",
+  "dependencies": {
+    "npm-lazy": "0.0.x",
+    "mkdirp": "0.3.x"
+   },
+  "devDependencies": {
+    "mocha": "*",
+    "npm": "*"
+  }
+}
