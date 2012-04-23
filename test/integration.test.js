@@ -29,6 +29,21 @@ exports['given a server'] = {
         done();
       })
     });
+  },
+
+  'can push a package to the cache': function(done) {
+    this.timeout(10000);
+    npm.load({ registry: 'http://localhost:9090/'}, function (err) {
+      if (err) {
+        throw new Error(err);
+      }
+      npm.commands.publish(['./fixture/'], function (err, data) {
+        if (err) {
+          throw new Error(err);
+        }
+        done();
+      })
+    });
   }
 };
 

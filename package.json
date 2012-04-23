@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "dependencies": {
     "npm-lazy": "0.0.x",
-    "mkdirp": "0.3.x"
+    "mkdirp": "0.3.x",
+    "mixu_minimal": "0.0.x"
    },
   "devDependencies": {
     "mocha": "*",
