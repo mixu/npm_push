@@ -1,4 +1,5 @@
-var http = require('http'),
+var fs = require('fs'),
+    http = require('http'),
     assert = require('assert'),
     npm = require('npm'),
 
@@ -17,6 +18,7 @@ exports['given a server'] = {
     });
   },
 
+  // npm install foo
   'can install a package from the cache': function(done) {
     npm.load({ registry: 'http://localhost:9090/'}, function (err) {
       if (err) {
@@ -31,6 +33,7 @@ exports['given a server'] = {
     });
   },
 
+  // npm push foo
   'can push a package to the cache': function(done) {
     this.timeout(10000);
     npm.load({ registry: 'http://localhost:9090/'}, function (err) {

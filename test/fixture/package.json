@@ -4,5 +4,8 @@
   "version": "0.0.1",
   "author": "Mikito Takada <mixu@mixu.net>",
   "keywords": ["test"],
-  "main": "index.js"
+  "main": "index.js",
+  "publishConfig":{
+    "registry": "http://localhost:9090/"
+  }
 }

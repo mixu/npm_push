@@ -9,5 +9,19 @@ module.exports = {
   externalUrl: 'http://localhost:8080',
   // bind port and host
   port: 8080,
-  host: 'localhost'
+  host: 'localhost',
+  // external registries in resolve order
+  searchPath: [
+    {
+      // subdirectory in cacheDirectory for caching/storage
+      dir: 'local'
+      // no url = this is the local repository
+    },
+    {
+      // subdirectory in cacheDirectory for caching
+      dir: 'remote',
+      // url to registry
+      url: 'http://registry.npmjs.org/'
+    }
+  ]
 };
