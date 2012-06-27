@@ -3,7 +3,6 @@
   "description": "Local npm server",
   "version": "0.0.1",
   "dependencies": {
-    "npm-lazy": "0.0.x",
     "mkdirp": "0.3.x",
     "mixu_minimal": "git://github.com/mixu/minimal.git#master",
     "semver": "1.0"
