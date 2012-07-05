@@ -6,9 +6,10 @@
     "mkdirp": "0.3.x",
     "mixu_minimal": "git://github.com/mixu/minimal.git#master",
     "semver": "1.0"
-   },
+  },
   "devDependencies": {
     "mocha": "*",
-    "npm": "*"
+    "npm": "*",
+    "rimraf": "~2.0.2"
   }
 }

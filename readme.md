@@ -25,7 +25,7 @@ Commands that work - remote:
 
     npm install
     npm publish
-    npm view
+    npm view / npm info
 
 Install and view are cached.
 Publish does not go out to the main server.
