@@ -46,7 +46,6 @@ exports['given a package'] = {
       done();
     });
   }
-
 };
 
 // if this module is the script being run, then run the tests:
