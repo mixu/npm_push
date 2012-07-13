@@ -1,9 +1,6 @@
 var http = require('http'),
-    app = require('./lib/app.js'),
-    config = require('./config.js'),
-    api = app.Api;
-
-app.configure(config);
+    api = require('./lib/api.js'),
+    config = require('./config.js');
 
 var server = http.createServer();
 
