@@ -29,6 +29,7 @@ exports['given a push endpoint'] = {
 
 
     this.server = http.createServer(function(req, res) {
+      console.log('Incoming request:', req.method, req.url);
       api.route(req, res);
     });
     this.server.listen(9090, 'localhost', function() {
@@ -41,9 +42,14 @@ exports['given a push endpoint'] = {
   // npm push foo, where the package does not exist
   'can push a new package to the cache': function(done) {
     this.timeout(10000);
-    npm.load({ registry: 'http://localhost:9090/'}, function (err) {
+    npm.load({ registry: 'http://localhost:9090/',
+      email : 'foo@bar.com',
+      _auth : 'foobar',
+      _token  : 'footoken',
+      username : 'foouser'
+    }, function (err) {
       if (err) { throw new Error(err); }
-      npm.commands.publish(['./fixture/0.0.1'], function (err, data) {
+      npm.commands.publish([__dirname + '/fixture/0.0.1'], function (err, data) {
         if (err) { throw new Error(err); }
         done();
       })
@@ -75,7 +81,7 @@ exports['given a push endpoint'] = {
     this.timeout(10000);
     npm.load({ registry: 'http://localhost:9090/'}, function (err) {
       if (err) { throw new Error(err); }
-      npm.commands.publish(['./fixture/0.0.2'], function (err, data) {
+      npm.commands.publish([__dirname + '/fixture/0.0.2'], function (err, data) {
         if (err) { throw new Error(err); }
         Client
           .get('http://localhost:9090/testfoo')
