@@ -29,6 +29,7 @@ exports['given a push endpoint'] = {
 
 
     this.server = http.createServer(function(req, res) {
+      console.log('Incoming request:', req.method, req.url);
       api.route(req, res);
     });
     this.server.listen(9090, 'localhost', function() {
