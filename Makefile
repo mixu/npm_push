@@ -1,6 +1,7 @@
 TESTS += test/cache.test.js
 # TESTS += test/integration.test.js
 TESTS += test/lifecycle.test.js
+TESTS += test/push.test.js
 TESTS += test/package.test.js
 
 test:
